@@ -985,7 +985,7 @@ namespace JeuDeCombat
                 }
                 else if (player.life >= 0 && ia.life == 0)
                 {
-                    box.LoadText("Opponnent  is  dead  !");
+                    box.LoadText("Opponent  is  dead  !");
                 }
             }
             timer += deltaTime;

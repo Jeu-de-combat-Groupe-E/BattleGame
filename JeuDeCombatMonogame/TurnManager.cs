@@ -227,7 +227,7 @@ namespace JeuDeCombat
                 }
                 else
                 {
-                    txtResult[2] = $"You  dealt  {degatOrdi}  damages  !";
+                    txtResult[2] = $"You  dealt  {degatOrdi}  damage(s)  !";
                 }
             }
 
@@ -239,7 +239,7 @@ namespace JeuDeCombat
             }
             else
             {
-                txtResult[3] = $"Opponent  dealt  {degatHumain}  damages  !";
+                txtResult[3] = $"Opponent  dealt  {degatHumain}  damage(s)  !";
             }
 
             classeHumain.Life -= degatHumain;
