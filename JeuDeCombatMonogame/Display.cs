@@ -1357,7 +1357,7 @@ namespace JeuDeCombat
         internal override void Draw(GameTime pGameTime)
         {
             var draw = Tools.Get<Main>()._spriteBatch;
-
+            board.Draw(pGameTime);
             int i = 0;
             for(int l=0; l< linesY.Length; l++)
             {
@@ -1374,11 +1374,14 @@ namespace JeuDeCombat
                         );
                         i++;
                     }
+                    else
+                    {
+                        draw.DrawString(Tools.Fonts["pokemon18"], "X", new Vector2(columsX[c], linesY[l]), Color.Black);
+                    }
                 }
             }
 
             choicePanel.Draw(pGameTime);
-            board.Draw(pGameTime);
             base.Draw(pGameTime);
 
         }
@@ -1457,7 +1460,7 @@ namespace JeuDeCombat
         void PlayARound(int pPlayer, int pIA, int pDifficulty)
         {
             int playerChoice = Tools.Rnd(0, 2);
-            int iaChoice = (pDifficulty == 0) ? Tools.Rnd(0, 1) : TurnManager.AdvanceIA(pIA);
+            int iaChoice = (pDifficulty == 0) ? Tools.Rnd(0, 2) : TurnManager.AdvanceIA(pIA);
             var result = TurnManager.Resolution(pPlayer, pIA, playerChoice, iaChoice, ref useless);
             charactersLife[charactersMatchs[step].Item1] += result.Item1;
             charactersLife[charactersMatchs[step].Item2] += result.Item2;
